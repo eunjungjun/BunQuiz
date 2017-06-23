@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">
+    <link rel="shortcut icon" href="http://i.imgur.com/FT899NG.png">
+    <style>
+        body {
+            background-image: url("http://i.imgur.com/N1LPGJl.png");
+            color: #d8416c;
+            overflow-x: hidden; 
+        }
+
+        h1 {
+            position: relative;
+            color: #750e2b;
+            left:50px;
+            background: rgba(247,185,225,0.05);
+            padding: 5px;
+            border-radius: 500px;
+            border-style:dotted solid;
+            border-color:rgba(226,108,187,0.3);
+            text-align: center;
+        }
+
+        h2 {
+            position: relative;
+            color: #9b1a3f;
+            left:50px;
+        }
+
+        h3 {
+            position: relative;
+            top:100px;
+            left:280px;
+            color: #9b1a3f;
+        }
+
+        a {
+            color: #d8416c;
+        }
+
+        .avatar {
+            position: relative;
+            top:50px;
+            left:175px;
+            width:128px;
+            margin: 10px;
+            border:10px double #f9c2f8;
+            border-radius: 500px;
+            -webkit-border-radius: 500px;
+            -moz-border-radius: 500px;
+        }
+
+        p {
+            position: relative;
+            top: 60px;
+            left: 185px;
+            width: 350px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .move{
+            position: relative;
+            left:50px;
+            background: rgba(255,229,246,0.55);
+            padding: 12px;
+            border-radius: 500px;
+        }
+
+        .moveButton{
+            position: relative;
+            left:50px;
+            top:25px;
+        }
+
+        .list{
+            position: relative;
+            left:235px;
+            top:120px;
+            width:250px;
+            list-style-image: url('http://i.imgur.com/ozrieTN.png');
+            background: rgba(255,226,249,0.6);
+            padding: 35px;
+            border-radius: 25px;
+            border-style:dashed;
+            border-color:#fc88be;
+        }
+    </style>
+</head>
+<body>
+    <img src="http://i.imgur.com/oETeEFQ.png" alt="BANNER HERE" style="width:1349px;height:254px;">
+
+    <div class = "col-md-6">
+        <h1>What type of Bun are you?</h1><br>
+    
+        <div class = "row">
+            <form action="/results">
+                {% set count = 0 %}
+                {% set question = openJson('questions.json') %}
+                {% for key in shuffle(question.keys()) %}
+                    <h2>&emsp;&emsp;{{ key }}</h2>
+                {% set options = shuffle(enumerate(question[key])) %}
+                {% for value, answer in options %}
+                    <div class = "radio move">
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="radio" name="{{ count }}" value="{{ value }}"> {{ answer }}<br>
+                    </div>
+                {% end %}
+                {% set count += 1 %}
+                {% end %}
+                <input class = "form-control moveButton"type = "submit" value="What kind of Bun am I?">
+
+            </form>
+        </div>
+    </div>
+
+    <div class = "col-md-6">
+        <img class="avatar" src="http://i36.photobucket.com/albums/e26/nerikiri/MusicBunny_zpsrqkjsg44.png" style="width:350px;height:350px;"></a><br>
+        <p><a href = "https://www.youtube.com/watch?v=8Z5EjAmZS1o">Want to hear more great piano music?</a></p><br>
+        <h3>Fun Bun Facts</h3>
+        <ul class = "list">
+            {% set bunFacts = openJson('facts.json') %}
+            {% for value in shuffle(bunFacts.values())[0:3] %}
+                <li>{{ value }}</li>
+            {% end %}
+        </ul>
+    </div>
+
+<!--<audio autoplay loop src="/files/music4.mp3"></audio>-->
+</body>
+</html>

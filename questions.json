@@ -1,0 +1,9 @@
+{   
+    "What's your favorite kind of day?" : ["Doesn't matter since I always stay inside", "Warm, breezy days", "Days with no wind"], 
+    "What do you tend to eat?" : ["Vegetables", "Carbohydrates", "Protein goodness"], 
+    "Which of these best describes you?" : ["Pretty quiet and shy", "Kind and make those around me feel warm", "Bright and always ready to face a new day"], 
+    "Cats and\/or dogs?" : ["Neither\/both", "Cats", "Dogs"], 
+    "Which would you hate most?" : ["A predator jumping out at me", "Not getting my daily dose of calories", "Having a bad hair day"], 
+    "Most appealing career choice?" : ["Becoming a Track & Field athlete", "Becoming a baker", "Becoming a hair stylist"], 
+    "When are you most active?" : ["I'm a total night owl", "From the crack of dawn", "No particular time"]
+}

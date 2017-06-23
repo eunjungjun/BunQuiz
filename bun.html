@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-RpX8okQqCyUNG7PlOYNybyJXYTtGQH+7rIKiVvg1DLg6jahLEk47VvpUyS+E2/uJ" crossorigin="anonymous">
+    <link href = "bun.css" rel = "stylesheet">
+    <link rel="shortcut icon" href="http://i.imgur.com/FT899NG.png">
+    <style>
+        body {
+            background-image: url("http://i.imgur.com/NChueJ9.png");
+            color: #2e2b77;
+            overflow-x: hidden; 
+        }
+
+        .avatar {
+            position: relative;
+            left: 200px;
+            width:128px;
+            margin: 10px;
+            border:10px dotted #cdc3e2;
+            border-radius: 500px;
+            -webkit-border-radius: 500px;
+            -moz-border-radius: 500px;
+        }
+
+        .border {
+        border-style:double;
+        border-color:#5990c1;
+        }
+
+        p {
+            position: relative;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 24px;
+            font-weight: bold;
+            width:350px;
+            text-align: center;
+            background: rgba(219,249,235,0.6);
+            padding: 15px;
+            border-radius: 45px;
+        }
+
+        a {
+            color: #53376b;
+        }
+
+        .center {
+            text-align: center;
+            font-size: 41px;
+        }
+
+        .imagePush {
+            position: relative;
+            left:500px;
+        }
+    </style>
+</head>
+<body>
+    <img src="http://i.imgur.com/BFR6mfv.png" alt="BANNER HERE" style="width:1366px;height:254px;">
+
+    {% set bun = getMax() %}
+
+    <div class = "col-md-12">
+        {% if bun == '' %}
+            <a href = "/" class="center">Oops, looks like there's nothing here! Try going back and doing the quiz!</a>
+            <img class="avatar imagePush" src="http://i.imgur.com/VmspLoe.png" style="width:325px;height:325px;">
+        {% end %}
+    </div>
+
+    <div class = "col-md-6">
+
+        {% if bun == '0' %}
+            <img class="avatar" src="https://pbs.twimg.com/profile_images/447374371917922304/P4BzupWu.jpeg" style="width:350px;height:350px;">
+        {% end %}
+
+        {% if bun == '1' %}
+            <img class="avatar" src="http://www.handletheheat.com/wp-content/uploads/2014/06/Homemade-Hawaiian-Bread-Rolls-01.jpg" style="width:350px;height:350px;">
+        {% end %}
+    
+        {% if bun == '2' %}
+            <img class="avatar" src="https://s-media-cache-ak0.pinimg.com/564x/c2/a5/12/c2a512544340b573534a8bce71077c8e.jpg" style="width:350px;height:350px;">
+        {% end %}
+    </div>
+
+    <div class = "col-md-6">
+        {% if bun == '0' %}
+            <p class="border">You are an actual Bun! A little timid but you soon warm up to those who care about you. You enjoy eating healthily and being fit though you tend to be more active at night.<a href = "/">Take me back to the quiz!</a></p>
+        {% end %}
+
+        {% if bun == '1' %}
+            <p class="border">You are a Bread Bun! Soft and warm, you make those who interact with you happy. You are a morning person and love to start the day off with a hearty breakfast.<a href = "/">Take me back to the quiz!</a></p>
+        {% end %}
+
+        {% if bun == '2' %}
+            <p class="border">You are a Hair Bun! You are a cheerful person who makes the best of each day. You take pride in your appearance and make sure to take care of both your body and mind.<a href = "/">Take me back to the quiz!</a></p>
+        {% end %}
+
+    </div>
+    <audio autoplay loop src="/files/music3.mp3"></audio>
+</body>
+</html>
